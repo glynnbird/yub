@@ -3,6 +3,16 @@
   "version": "0.10.0",
   "description": "Yubico Yubikey API Client",
   "main": "index.js",
+  "repository": "https://github.com/glynnbird/yub.git",
+  "keywords": [
+    "Yubikey",
+    "Yubico",
+    "API",
+    "authentication",
+    "security"
+  ],
+  "author": "Glynn Bird",
+  "license": "BSD",
   "dependencies": {
     "request": "2.27.0"
   }
