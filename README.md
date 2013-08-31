@@ -15,7 +15,7 @@ Yub is published as an NPM module for your convenience:
 
 ```
   npm install yub
-``
+```
 
 You'll also need a Yubico API Key from here: https://upgrade.yubico.com/getapikey/. This gives you the
 client_id and secret_key that must be passed to "yub.init()", see below.
@@ -49,7 +49,6 @@ A typical 'data' return from yub.verify looks like this:
     nonceVerified: true,
     identity: 'cccaccbtbvkw'
 }
-
 ```
 
 * t - the timestamp of the interaction
