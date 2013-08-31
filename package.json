@@ -1,0 +1,9 @@
+{
+  "name": "yub",
+  "version": "0.10.0",
+  "description": "Yubico Yubikey API Client",
+  "main": "index.js",
+  "dependencies": {
+    "request": "2.27.0"
+  }
+}
