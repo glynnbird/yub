@@ -1,5 +1,7 @@
 # YUB
 
+[![NPM](https://nodei.co/npm/yub.png)](https://nodei.co/npm/yub/)
+
 ## Introduction
 
 What is Yub? It's a simple Yubico Yubikey API client that
@@ -8,6 +10,32 @@ What is Yub? It's a simple Yubico Yubikey API client that
 * signs the outgoing data
 * checks the incoming data's signature
 * extracts the Yubkey's unique identifier if the OTP is valid
+
+## What is a Yubikey?
+
+A Yubikey is a USB device manufactured by [Yubico](https://www.yubico.com/products/yubikey-hardware/yubikey/) that appears
+to your computer as a USB keyboard. 
+
+![Yubikeys](https://raw.github.com/glynnbird/yub/master/img/yubikeys.jpg)
+
+It generates one-time passwords consisting of:
+
+* your Yubikey's unique identity
+* a string of characters
+
+This sequence of characters can be sent to Yubico's web service which will verify whether the string is valid or not. Your Yubikey
+can be used for a variety of authentication tasks. This library is designed to allow simple integration with the Yubico web service
+so that you can interpret your Yubikey's one-time-password in your own Node.js scripts. e.g.
+
+* allow a user to authenticate via Yubikey in your web app
+* create command-line scripts that only operate with a valid Yubikey
+* etc
+
+## What do you need?
+
+* a Yubikey
+* node.js
+* npm
 
 ## Installation
 
