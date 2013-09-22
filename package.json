@@ -1,6 +1,6 @@
 {
   "name": "yub",
-  "version": "0.10.4",
+  "version": "0.10.5",
   "description": "Yubico Yubikey API Client",
   "main": "index.js",
   "repository": "https://github.com/glynnbird/yub.git",

@@ -75,7 +75,8 @@ A typical 'data' return from yub.verify looks like this:
     status: 'OK',
     signatureVerified: true,
     nonceVerified: true,
-    identity: 'cccaccbtbvkw'
+    identity: 'cccaccbtbvkw',
+    serial: 123456
 }
 ```
 
@@ -91,6 +92,14 @@ A typical 'data' return from yub.verify looks like this:
 * signatureVerified - whether the reply from the Yubico server was correctly signed
 * nonceVerified - whether the reply 'nonce' was the same as the outgoing 'nonce'
 * identity - the unique identifier of the Yubikey that generated the password. If you want to write software the detects the presence of a specific Yubikey (not just any Yubikey), then data.identity is your friend.
+* serial - the serial number of the Yubikey. This is derived by decoding the identity's modhex encoding.
+
+## Offline verification
+
+You can also call "yub.verifyOffline", which returns the same object in the same format but
+without contacting the Yubico servers i.e. it simply extracts the identity of the Yubikey 
+from the OTP without any network access. This is, of course, far less secure, but is useful
+for offline applications.
 
 ## Further examples
 
