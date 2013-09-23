@@ -92,6 +92,8 @@ A typical 'data' return from yub.verify looks like this:
 * signatureVerified - whether the reply from the Yubico server was correctly signed
 * nonceVerified - whether the reply 'nonce' was the same as the outgoing 'nonce'
 * identity - the unique identifier of the Yubikey that generated the password. If you want to write software the detects the presence of a specific Yubikey (not just any Yubikey), then data.identity is your friend.
+* encrypted - the 32 digit encrypted portion of the OTP in 'modhex' format
+* encryptedHex - the encrypted portion of the OTP in hexadecimal
 * serial - the serial number of the Yubikey. This is derived by decoding the identity's modhex encoding.
 
 ## Offline verification
