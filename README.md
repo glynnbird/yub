@@ -76,7 +76,8 @@ A typical 'data' return from yub.verify looks like this:
     signatureVerified: true,
     nonceVerified: true,
     identity: 'cccaccbtbvkw',
-    serial: 123456
+    serial: 123456,
+    valid: true
 }
 ```
 
@@ -95,13 +96,15 @@ A typical 'data' return from yub.verify looks like this:
 * encrypted - the 32 digit encrypted portion of the OTP in 'modhex' format
 * encryptedHex - the encrypted portion of the OTP in hexadecimal
 * serial - the serial number of the Yubikey. This is derived by decoding the identity's modhex encoding.
+* valid - this is true if the status = 'OK', the signature is verified and the nonce is verified
 
 ## Offline verification
 
 You can also call "yub.verifyOffline", which returns the same object in the same format but
 without contacting the Yubico servers i.e. it simply extracts the identity of the Yubikey 
 from the OTP without any network access. This is, of course, far less secure, but is useful
-for offline applications.
+for offline applications. As we cannot validate the status online, "valid" is always false in 
+offline mode.
 
 ## Further examples
 
@@ -120,7 +123,8 @@ It takes the OTP as a command-line parameter i.e. type "node test.js ", insert y
     status: 'OK',
     signatureVerified: true,
     nonceVerified: true,
-    identity: 'cccaccbtbvkw'}
+    identity: 'cccaccbtbvkw',
+    valid: true }
 ```
 
 ## References
