@@ -13,7 +13,8 @@ yub.verify(otp, function(err,data) {
     console.log("Error");
     process.exit(-1);
   }
-  if (data.signatureVerified && data.nonceVerified && data.status == "OK") {
+  console.log(data);
+  if (data.valid) {
     console.log(data);
     process.exit(0);
   } else {
