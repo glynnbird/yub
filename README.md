@@ -33,9 +33,9 @@ so that you can interpret your Yubikey's one-time-password in your own Node.js s
 
 ## What do you need?
 
-* a Yubikey
-* node.js
-* npm
+* a [Yubikey](http://www.yubico.com/)
+* [node.js](http://nodejs.org/)
+* [npm](https://npmjs.org/)
 
 ## Installation
 
@@ -45,7 +45,7 @@ Yub is published as an NPM module for your convenience:
   npm install yub
 ```
 
-You'll also need a Yubico API Key from here: https://upgrade.yubico.com/getapikey/. This gives you the
+You'll also need a Yubico API Key from here: [https://upgrade.yubico.com/getapikey/]([https://upgrade.yubico.com/getapikey/). This gives you the
 client_id and secret_key that must be passed to "yub.init()", see below.
 
 ## Example code
