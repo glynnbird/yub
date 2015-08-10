@@ -1,6 +1,6 @@
 {
   "name": "yub",
-  "version": "0.10.8",
+  "version": "0.10.9",
   "description": "Yubico Yubikey API Client for Node.js",
   "main": "index.js",
   "repository": "https://github.com/glynnbird/yub.git",
@@ -12,8 +12,8 @@
     "security"
   ],
   "author": "Glynn Bird",
-  "license": "BSD",
+  "license": "Apache-2.0",
   "dependencies": {
-    "request": "2.27.0"
+    "request": "2.60.0"
   }
 }
