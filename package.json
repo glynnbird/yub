@@ -14,6 +14,6 @@
   "author": "Glynn Bird",
   "license": "Apache-2.0",
   "dependencies": {
-    "request": "2.68.0"
+    "request": "2.69.0"
   }
 }
