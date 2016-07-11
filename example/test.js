@@ -5,7 +5,7 @@ var key = process.argv.length - 1;
 var otp = process.argv[key];
 
 // initialise the yub library
-yub.init("12893", "B5igHDG7W4RiPDW2Bu2L4Rl/S5U=");
+yub.init(process.env.USERNAME, process.env.PASSWORD);
 
 // attempt to verify the key
 yub.verify(otp, function(err,data) {
