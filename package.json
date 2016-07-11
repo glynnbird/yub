@@ -1,6 +1,6 @@
 {
   "name": "yub",
-  "version": "0.10.13",
+  "version": "0.10.14",
   "description": "Yubico Yubikey API Client for Node.js",
   "main": "index.js",
   "repository": "https://github.com/glynnbird/yub.git",
@@ -13,7 +13,13 @@
   ],
   "author": "Glynn Bird",
   "license": "Apache-2.0",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
     "request": "2.72.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3"
   }
 }
