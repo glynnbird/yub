@@ -14,12 +14,20 @@
   "author": "Glynn Bird",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint ."
   },
   "dependencies": {
     "request": "2.73.0"
   },
   "devDependencies": {
-    "mocha": "^2.5.3"
-  }
+    "eslint": "^3.1.1",
+    "mocha": "^2.5.3",
+    "nock": "^8.0.0",
+    "pre-commit": "^1.1.3"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
 }
