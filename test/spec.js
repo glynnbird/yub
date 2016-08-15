@@ -35,7 +35,7 @@ describe('yub', function() {
       '&h=([a-zA-Z0-9]|%3D|%2B)+');
 
     // Fake the request
-    nock('https://api.yubico.com')
+    nock(/https:\/\/api[2-5]?\.yubico\.com/)
       .get(pathMatcher)
       .reply(200, function(uri, _requestBody) {
         var query = qs.parse(uri.split('?')[1]);
@@ -68,6 +68,39 @@ describe('yub', function() {
     };
     var actual = yub._calculateHmac(obj, secretKey);
     assert.equal(actual, expected);
+  });
+
+  it('should round-robin through servers', function(done) {
+    var otp = 'cffcccdebcntbilunkhgvehfuigcljjtudrfhgikcirl';
+
+    var received = [];
+    var servers = yub._servers;
+
+    // Go around twice to ensure round-robin works
+    for (var i = 0; i < servers.length * 2; i++) {
+      req(i, function(err, data) {
+        assert(err === null);
+        received.push(data);
+        if (received.length === servers.length * 2) {
+          assert(received.slice().sort().toString() === servers.concat(servers).sort().toString());
+          done();
+        }
+      });
+    }
+
+    function req(idx, finished) {
+      // Fake the request
+      nock(/https:\/\/api[2-5]?\.yubico\.com/)
+        .get(/.*/)
+        .reply(200, function(uri, _requestBody) {
+          return 'host=' + this.req.headers.host;
+        });
+
+      yub.verify(otp, function(err, data) {
+        finished(err, data.host);
+      });
+    }
+
   });
 
 });
